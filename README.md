@@ -25,7 +25,7 @@ Go!
 rackup
 ```
 
-Run tests:  
+Run status checks:
 [http://localhost:9292/run](http://localhost:9292/run)
 
 Output RSS:  
