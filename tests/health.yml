@@ -1,5 +1,5 @@
 # test for the health site
 --- 
 type: website
-name: Health site
+name: Health
 url: http://www.bath.ac.uk/health/
