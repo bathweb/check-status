@@ -12,7 +12,7 @@ Usage
 
 Setup:  
 ```sh
-gem install bundle
+gem install bundler
 bundle install
 ```
 
