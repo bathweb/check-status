@@ -1,17 +1,52 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,700);
+
+body {
+  font-family: 'Roboto Condensed', sans-serif;
+  color: #eee;
+  background-color: #3C3F47;
+}
+
 .notice {
-    padding-left: 20px;
-    clear: none;
-    min-height: 60px;
-    max-height: 60px;
-    overflow: hidden;
+  padding-left: 20px;
+  clear: none;
+  min-height: 60px;
+  max-height: 60px;
+  overflow: hidden;
+  border-radius: 0;
+  font-size: 1.6em;
+  margin: 0.4em;
 }
 
 .notice a {
 	text-decoration: none;	
-    vertical-align: middle;
-    overflow: hidden;    
+  vertical-align: middle;
+  overflow: hidden; 
+}
+
+.success {
+  background-color: #B8E86D;
+}
+
+.warning {
+  background-color: #F5E867;
+}
+
+.error {
+  background-color: #B55843;
+}
+
+.notice.success, .notice.warning, .notice.error {
+  border: none;
 }
 
 .success a {
-	color: green;
+  color: #536931;
+}
+
+.warning a {
+  color: #756F31;
+}
+
+.error a {
+  color: #351A14;
 }
