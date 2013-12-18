@@ -1,18 +1,15 @@
 %div.col_12
     - rss.items.to_enum.with_index.each do |item, index|
         - if item.description == 'website:up'
-            %p{:class => 'col_2 notice success center'}
-                %i{:class => 'icon-ok icon-large'}
+            %span{:class => 'col_2 notice success center'}
                 %a{:href => item.link}                
                     =item.title
         - elsif item.description == 'website:redirecting'
-            %p{:class => 'col_2 notice warning center'}
-                %i{:class => 'icon-exclamation-sign icon-large'}
+            %span{:class => 'col_2 notice warning center'}
                 %a{:href => item.link}                
                     =item.title        
         - else
-            %p{:class => 'col_2 notice error center'}
-                %i{:class => 'icon-minus-sign icon-large'}
+            %span{:class => 'col_2 notice error center'}
                 %a{:href => item.link}                
                     =item.title        
 
