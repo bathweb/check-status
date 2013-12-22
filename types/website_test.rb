@@ -21,15 +21,21 @@ class WebsiteTest < BaseTest
         if (url.scheme == "https") then
             http.use_ssl = true
         end
-        res = http.request(Net::HTTP::Get.new(url.request_uri))
-        
-        @result = "website:down"
-        if (res.code.to_i >= 300 && res.code.to_i < 400) then
-            @result = "website:redirecting"
-        elsif (res.code.to_i < 300) then 
-            @result = "website:up"
-        end
 
+        @result = "website:down"
+
+        begin
+            res = http.request(Net::HTTP::Get.new(url.request_uri))
+
+            if (res.code.to_i >= 300 && res.code.to_i < 400) then
+                @result = "website:redirecting"
+            elsif (res.code.to_i < 300) then 
+                @result = "website:up"
+            end            
+        rescue => e
+            # swallow
+        end
+                
         return [@name, @addr, @result]
     end
 
