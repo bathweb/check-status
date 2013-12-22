@@ -24,8 +24,13 @@ Go!
 ```sh
 rackup
 ```
+To have code and template changes automatically detected:
+```sudo gem install shotgun
+shotgun config.ru
+```
 
-Run tests:  
+
+Run status checks:
 [http://localhost:9292/run](http://localhost:9292/run)
 
 Output RSS:  

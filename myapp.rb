@@ -42,6 +42,36 @@ class MyApp < Sinatra::Base
         haml :index, :format => :html5, :locals => {:title => title, :date => date, :rss => rss}
     end
 
+    get '/bigscreen' do
+
+        status = :ok
+
+        # Read the feed into rss_content
+        rss_content = ""
+        open(tests.output_file, "r") do |f|
+           rss_content = f.read
+        end
+
+        # Parse the feed, dumping its contents to rss
+        rss = RSS::Parser.parse(rss_content, false)
+
+        title = "Is it up?"
+        date = "Last updated: " + Time.parse(rss.channel.lastBuildDate.to_s).strftime("%H:%M:%S %d/%m/%Y")
+
+        rss.items.each { |i| 
+            if i.description.include?('down')
+                status = :broken
+            end 
+        }     
+
+        if status == :ok 
+            haml :bigscreen, :format => :html5, :locals => {:title => title, :date => date, :rss => rss}
+        else
+            haml :index, :format => :html5, :locals => {:title => title, :date => date, :rss => rss}
+        end
+
+    end
+
     get '/test' do
         "test3"
     end
