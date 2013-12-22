@@ -43,6 +43,9 @@ class MyApp < Sinatra::Base
     end
 
     get '/bigscreen' do
+
+        status = :ok
+
         # Read the feed into rss_content
         rss_content = ""
         open(tests.output_file, "r") do |f|
@@ -57,11 +60,16 @@ class MyApp < Sinatra::Base
 
         rss.items.each { |i| 
             if i.description.include?('down')
-                @status = :broken
+                status = :broken
             end 
         }     
 
-        haml :bigscreen, :format => :html5, :locals => {:title => title, :date => date, :rss => rss, :status => @status}
+        if status == :ok 
+            haml :bigscreen, :format => :html5, :locals => {:title => title, :date => date, :rss => rss}
+        else
+            haml :index, :format => :html5, :locals => {:title => title, :date => date, :rss => rss}
+        end
+
     end
 
     get '/test' do
