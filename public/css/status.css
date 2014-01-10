@@ -6,8 +6,15 @@ body {
   background-color: #3C3F47;
 }
 
+h1 {
+  font-size: 16em;
+  vertical-align: middle;  
+  text-align: center;
+}
+
 .notice {
-  padding-left: 20px;
+  padding-left: 0.1em;
+  padding-right: 0.1em;
   clear: none;
   min-height: 60px;
   max-height: 60px;
