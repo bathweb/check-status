@@ -2,7 +2,7 @@ source "http://rubygems.org"
 
 gem "sinatra"
 gem "haml"
-gem "rufus-scheduler"
+gem "rufus-scheduler", "2.0.24"
 gem "twitter"
 
 group :test do

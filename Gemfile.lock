@@ -1,33 +1,49 @@
 GEM
   remote: http://rubygems.org/
   specs:
+    addressable (2.3.5)
     atomic (1.1.14)
-    faraday (0.8.8)
+    buftok (0.2.0)
+    descendants_tracker (0.0.3)
+    equalizer (0.0.9)
+    faraday (0.8.9)
       multipart-post (~> 1.2.0)
-    haml (4.0.3)
+    haml (4.0.5)
       tilt
-    multi_json (1.8.1)
+    http (0.5.0)
+      http_parser.rb
+    http_parser.rb (0.6.0)
+    json (1.8.1)
+    memoizable (0.4.0)
+      thread_safe (~> 0.1.3)
     multipart-post (1.2.0)
     rack (1.5.2)
-    rack-protection (1.5.0)
+    rack-protection (1.5.1)
       rack
     rack-test (0.6.2)
       rack (>= 1.0)
     rufus-scheduler (2.0.24)
-      tzinfo
+      tzinfo (>= 0.3.22)
     simple_oauth (0.2.0)
-    sinatra (1.4.3)
+    sinatra (1.4.4)
       rack (~> 1.4)
       rack-protection (~> 1.4)
       tilt (~> 1.3, >= 1.3.4)
-    test-unit (2.0.0.0)
+    test-unit (2.5.5)
     thread_safe (0.1.3)
       atomic
     tilt (1.4.1)
-    twitter (4.8.1)
-      faraday (~> 0.8, < 0.10)
-      multi_json (~> 1.0)
-      simple_oauth (~> 0.2)
+    twitter (5.5.1)
+      addressable (~> 2.3)
+      buftok (~> 0.2.0)
+      descendants_tracker (~> 0.0.3)
+      equalizer (~> 0.0.9)
+      faraday (>= 0.8, < 0.10)
+      http (~> 0.5.0)
+      http_parser.rb (~> 0.6.0)
+      json (~> 1.8)
+      memoizable (~> 0.4.0)
+      simple_oauth (~> 0.2.0)
     tzinfo (1.1.0)
       thread_safe (~> 0.1)
 
@@ -37,7 +53,7 @@ PLATFORMS
 DEPENDENCIES
   haml
   rack-test
-  rufus-scheduler
+  rufus-scheduler (= 2.0.24)
   sinatra
   test-unit
   twitter
