@@ -5,7 +5,7 @@ Check the status of a service.
 
 Written in ruby using Sinatra, HAML and HTML Kickstart.
 
-[![Codeship Status for bathweb/check-status](https://www.codeship.io/projects/811a2780-30c9-0131-6215-72ccea08133e/status?branch=master)](https://www.codeship.io/projects/9557)
+[![Codeship Status for bathweb/check-status](https://www.codeship.io/projects/811a2780-30c9-0131-6215-72ccea08133e/status)](https://www.codeship.io/projects/9557)
 
 Usage
 -----
